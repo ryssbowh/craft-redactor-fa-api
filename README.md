@@ -41,7 +41,7 @@ By default redactor will replace `i` tags with `em` tags, you can disable this i
 A new button will be created on the redactor toolbar, click on it, it open a popup with a search box that will search on the API.  
 Clicking on an icon will insert it in your redactor content.
 
-[!redactor](images/redactor.png)
+![redactor](images/redactor.png)
 
 ## Frontend
 

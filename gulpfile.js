@@ -10,10 +10,10 @@ var sourcemaps = require('gulp-sourcemaps');
 gulp.task('js-prod', function() {
   return gulp
     .src('src/assets/js/**/*.js')
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(uglify())
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(gulp.dest('src/assets/dist'))
 });
 
