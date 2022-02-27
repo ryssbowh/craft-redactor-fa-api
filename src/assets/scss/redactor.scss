@@ -35,6 +35,15 @@
         label {
             transition: all 0.3s;
             margin-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 30px);
+            code {
+                font-size: 10px !important;
+            }
+        }
+        small {
+            font-size: 10px;
         }
         &:hover {
             background-color: #007dff;

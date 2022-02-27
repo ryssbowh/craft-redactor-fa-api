@@ -188,7 +188,7 @@ class FaGraphQl {
                     let faClass = 'fa-' + style + ' fa-' + icon.id;
                     let elem = document.createElement('div');
                     elem.classList.add('icon');
-                    elem.innerHTML = '<i class="' + faClass + '"></i><label>' + icon.label + '</label>';
+                    elem.innerHTML = '<i class="' + faClass + '"></i><label><span>' + icon.label + '</span><code>' + faClass + '</code></label>';
                     list.append(elem);
                     elem.addEventListener('click', () => {
                         this._insert(faClass);
