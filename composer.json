@@ -1,0 +1,34 @@
+{
+    "name": "ryssbowh/craft-redactor-fa-api",
+    "description": "Integrate font awesome to redactor through API",
+    "type": "craft-plugin",
+    "license": "MIT",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "redactor",
+        "font-awesome"
+    ],
+    "authors": [
+        {
+            "name": "Web Puzzlers",
+            "homepage": "https://github.com/ryssbowh"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.5",
+        "craftcms/redactor": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "Ryssbowh\\RedactorFa\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Font Awesome for Redactor",
+        "handle": "redactor-fa-api",
+        "class": "Ryssbowh\\RedactorFa\\RedactorFa"
+    }
+}
