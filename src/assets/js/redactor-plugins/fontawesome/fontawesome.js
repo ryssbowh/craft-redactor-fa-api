@@ -126,13 +126,15 @@ class FaGraphQl {
                         e.stopPropagation();
                     });
                     $form.getField('icon-name').on('focus', (e) => {
-                        this._showList();
-                        this._search();
+                        if (e.target.value) {
+                            this._initSearch();
+                            this._search();
+                        }
                     });
                     $form.getField('icon-name').on('keyup', (e) => {
                         clearTimeout(this.keyupTimeout);
                         if (e.target.value) {
-                            this._showList();
+                            this._initSearch();
                             this.keyupTimeout = setTimeout(() => {
                                 this._search();
                             }, 300);
@@ -196,7 +198,7 @@ class FaGraphQl {
                 });
             });
         },
-        _showList()
+        _initSearch()
         {
             this.modal.nodes[0].querySelector('.loading').style.display = 'block';
             this.modal.nodes[0].querySelector('.errors').style.display = 'none';
