@@ -29,6 +29,7 @@
     "extra": {
         "name": "Font Awesome for Redactor",
         "handle": "redactor-fa-api",
+        "documentationUrl": "https://github.com/ryssbowh/craft-redactor-fa-api",
         "class": "Ryssbowh\\RedactorFa\\RedactorFa"
     }
 }

@@ -1,6 +1,6 @@
 # Font Awesome for Redactor for Craft CMS ^3.5
 
-Intgrate [font Awesome](https://fontawesome.com/) to your redactor.
+Integrate [font Awesome](https://fontawesome.com/) to your redactor.
 
 This plugin supports Font Awesome version 5 and 6 only.
 
