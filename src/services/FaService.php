@@ -59,7 +59,7 @@ class FaService extends Component
      */
     public function modifyRedactorConfig(array $config): array
     {
-        if (!in_array('fontawesome', $config['plugins'])) {
+        if (!in_array('fontawesome', $config['plugins'] ?? [])) {
             return $config;
         }
         $settings = RedactorFa::$plugin->settings;
