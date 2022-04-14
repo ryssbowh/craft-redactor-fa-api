@@ -1,5 +1,10 @@
 # Redactor FontAwesome Changelog
 
+## 1.0.3 - 2022-04-14
+
+### Changed
+- Bump up Font awesome to version 6.1.1
+
 ## 1.0.2 - 2022-04-14
 
 ### Fixed
