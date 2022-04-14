@@ -1,5 +1,10 @@
 # Redactor FontAwesome Changelog
 
+## 1.0.4 - 2022-04-14
+
+### Fixed
+- Fixed text being included in em tag [2](https://github.com/ryssbowh/craft-redactor-fa-api/issues/2)
+
 ## 1.0.3 - 2022-04-14
 
 ### Changed
