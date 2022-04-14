@@ -60,13 +60,13 @@ class Settings extends Model
         }
         $path = \Craft::getAlias($this->faPath);
         if (!file_exists($path)) {
-            $this->addError('faPath', \Craft::t('redactor-fa', "This folder doesn't exist"));
+            $this->addError('faPath', \Craft::t('redactor-fa-api', "This folder doesn't exist"));
         }
         $required = ['css' . DIRECTORY_SEPARATOR . 'all.css'];
         foreach ($required as $file) {
             $fullPath = $path . DIRECTORY_SEPARATOR . $file;
             if (!file_exists($fullPath)) {
-                $this->addError('faPath', \Craft::t('redactor-fa', "The file $file could not be found in this folder"));
+                $this->addError('faPath', \Craft::t('redactor-fa-api', "The file $file could not be found in this folder"));
             }
         }
     }

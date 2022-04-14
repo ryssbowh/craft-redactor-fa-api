@@ -22,7 +22,7 @@ class RedactorFa extends Plugin
     /**
      * @var bool
      */
-    public bool $hasCpSettings = true;
+    public $hasCpSettings = true;
 
     /**
      * @inheritdoc
@@ -93,18 +93,5 @@ class RedactorFa extends Plugin
                 'faVersionOptions' => $this->fa->versions
             ]
         );
-    }
-
-    /**
-     * Register Translation
-     */
-    private function registerTranslation(): void
-    {
-        \Craft::$app->i18n->translations['redactor-fa'] = [
-            'class' => PhpMessageSource::class,
-            'sourceLanguage' => 'en',
-            'basePath' => __DIR__ . '/translations',
-            'allowOverrides' => true,
-        ];
     }
 }
