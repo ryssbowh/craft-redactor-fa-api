@@ -30,7 +30,7 @@ You need 3 things for this to work:
 
 License and version are important to get right to make sure the api return the right results.
 
-This is the default setup when installing this plugin, at the time of writing this plugin is shipped with fontawesome 6.0.0 free.
+This is the default setup when installing this plugin, at the time of writing this plugin is shipped with fontawesome 6.1.1 free.
 
 ### Em tags
 
