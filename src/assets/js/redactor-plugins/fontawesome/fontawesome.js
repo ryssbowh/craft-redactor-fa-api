@@ -75,15 +75,25 @@ class FaGraphQl {
         keyupTimeout: null,
         modal: null,
         form: null,
+        majorVersion: null,
+        styleToPrefixV5: {
+            solid   : 'fas',
+            regular : 'far',
+            light   : 'fal',
+            thin    : 'fat',
+            duotone : 'fad',
+            brands  : 'fab',
+            kit     : 'fak'
+        },
         translations: {en: 
             {
-                title: "Font Awesome Icon",
-                search: "Enter an icon name",
-                cancel: "Cancel",
-                placeholder: "Icon name or id",
-                search: "Search",
-                loading: "Loading...",
-                apiError: "Couldn't fetch icons from the api"
+                title: Craft.t('redactor-fa-api', 'Font Awesome Icon'),
+                search: Craft.t('redactor-fa-api', 'Enter an icon name'),
+                cancel: Craft.t('redactor-fa-api', 'Cancel'),
+                placeholder: Craft.t('redactor-fa-api', 'Icon name or id'),
+                search: Craft.t('redactor-fa-api', 'Search'),
+                loading: Craft.t('redactor-fa-api', 'Loading...'),
+                apiError: Craft.t('redactor-fa-api', 'Couldn\'t fetch icons from the api')
             }
         },
         modals: {
@@ -110,10 +120,16 @@ class FaGraphQl {
             }
         },
         _initPath() {
+            this._initVersion(this.opts.redactorFaApi.version);
             this.graphQl = new FaGraphQl(this.opts.redactorFaApi.version, this.opts.redactorFaApi.license);
         },
         _initKit() {
+            this._initVersion(window.FontAwesomeKitConfig.version);
             this.graphQl = new FaGraphQl(window.FontAwesomeKitConfig.version, window.FontAwesomeKitConfig.license);
+        },
+        _initVersion(version) {
+            let elems = version.split('.')
+            this.majorVersion = parseInt(elems[0]);
         },
         onmodal: {
             fontawesome: {
@@ -153,7 +169,7 @@ class FaGraphQl {
         },
         start: function () {
             var i = { title: this.lang.get("title"), api: "plugin.fontawesome.open" };
-            this.toolbar.addButton("title", i).setIcon('<i class="fa-solid fa-font-awesome"></i>');
+            this.toolbar.addButton("title", i).setIcon(`<i class="${ parseInt(this.opts.redactorFaApi.version) == 5 ? 'fab':'fa-solid'} fa-font-awesome"></i>`);
         },
         open: function () {
             var options = {
@@ -187,7 +203,7 @@ class FaGraphQl {
         _buildResults: function (icons, list) {
             icons.forEach((icon) => {
                 icon.styles.forEach((style) => {
-                    let faClass = 'fa-' + style + ' fa-' + icon.id;
+                    let faClass = this._faClass(style, icon);
                     let elem = document.createElement('div');
                     elem.classList.add('icon');
                     elem.innerHTML = '<i class="' + faClass + '"></i><label><span>' + icon.label + '</span><code>' + faClass + '</code></label>';
@@ -197,6 +213,12 @@ class FaGraphQl {
                     })
                 });
             });
+        },
+        _faClass(style, icon) {
+            if (this.majorVersion == 5) {
+                return this.styleToPrefixV5[style] + ' fa-' + icon.id;
+            }
+            return 'fa-' + style + ' fa-' + icon.id;
         },
         _initSearch()
         {
