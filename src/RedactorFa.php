@@ -2,6 +2,7 @@
 
 namespace Ryssbowh\RedactorFa;
 
+use craft\i18n\PhpMessageSource;
 use Ryssbowh\RedactorFa\assets\bundles\SettingsBundle;
 use Ryssbowh\RedactorFa\models\Settings;
 use Ryssbowh\RedactorFa\services\FaService;
@@ -92,5 +93,18 @@ class RedactorFa extends Plugin
                 'faVersionOptions' => $this->fa->versions
             ]
         );
+    }
+
+    /**
+     * Register Translation
+     */
+    private function registerTranslation(): void
+    {
+        \Craft::$app->i18n->translations['redactor-fa'] = [
+            'class' => PhpMessageSource::class,
+            'sourceLanguage' => 'en',
+            'basePath' => __DIR__ . '/translations',
+            'allowOverrides' => true,
+        ];
     }
 }
