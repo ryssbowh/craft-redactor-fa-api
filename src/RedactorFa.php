@@ -22,7 +22,7 @@ class RedactorFa extends Plugin
     /**
      * @var bool
      */
-    public $hasCpSettings = true;
+    public bool $hasCpSettings = true;
 
     /**
      * @inheritdoc
