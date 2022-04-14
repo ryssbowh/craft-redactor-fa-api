@@ -2,9 +2,11 @@
 
 namespace Ryssbowh\RedactorFa;
 
+use craft\i18n\PhpMessageSource;
 use Ryssbowh\RedactorFa\assets\bundles\SettingsBundle;
 use Ryssbowh\RedactorFa\models\Settings;
 use Ryssbowh\RedactorFa\services\FaService;
+use craft\base\Model;
 use craft\base\Plugin;
 use craft\redactor\Field;
 use craft\web\twig\variables\CraftVariable;
@@ -25,7 +27,7 @@ class RedactorFa extends Plugin
     /**
      * @inheritdoc
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;
@@ -73,7 +75,7 @@ class RedactorFa extends Plugin
     /**
      * @inheritdoc
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): ?Model
     {
         return new Settings();
     }
