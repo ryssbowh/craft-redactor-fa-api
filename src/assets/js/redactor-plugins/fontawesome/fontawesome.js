@@ -235,7 +235,14 @@ class FaGraphQl {
         {
             this._closeList();
             this.app.api('module.modal.close');
-            this.insertion.insertHtml('<span><i class="' + faClass + '"></i></span>');
+            let classes = faClass.split(' ');
+            let span = $R.dom('<span>');
+            let icon = document.createElement('i');
+            classes.forEach((ele) => {
+                icon.classList.add(ele);
+            })
+            span.add(icon);
+            this.insertion.insertNode(span, 'after');
         }
     });
 })(Redactor);
