@@ -71,6 +71,16 @@ class FaGraphQl {
 }
 
 !(function (i) {
+    const styleToPrefixV5 = {
+        'solid'     : 'fas',
+        'regular'   : 'far',
+        'light'     : 'fal',
+        'thin'      : 'fat',
+        'duotone'   : 'fad',
+        'brands'    : 'fab',
+        'kit'       : 'fak'
+    };
+
     i.add("plugin", "fontawesome", {
         keyupTimeout: null,
         modal: null,
@@ -153,7 +163,7 @@ class FaGraphQl {
         },
         start: function () {
             var i = { title: this.lang.get("title"), api: "plugin.fontawesome.open" };
-            this.toolbar.addButton("title", i).setIcon('<i class="fa-solid fa-font-awesome"></i>');
+            this.toolbar.addButton("title", i).setIcon(`<i class="${ parseInt(this.opts.redactorFaApi.version) == 5 ? 'fab':'fa-solid'} fa-font-awesome"></i>`);
         },
         open: function () {
             var options = {
@@ -188,6 +198,9 @@ class FaGraphQl {
             icons.forEach((icon) => {
                 icon.styles.forEach((style) => {
                     let faClass = 'fa-' + style + ' fa-' + icon.id;
+                    if (parseInt(this.opts.redactorFaApi.version) == 5) {
+                        faClass = styleToPrefixV5[style] + ' fa-' + icon.id;
+                    }
                     let elem = document.createElement('div');
                     elem.classList.add('icon');
                     elem.innerHTML = '<i class="' + faClass + '"></i><label><span>' + icon.label + '</span><code>' + faClass + '</code></label>';
@@ -213,7 +226,14 @@ class FaGraphQl {
         {
             this._closeList();
             this.app.api('module.modal.close');
-            this.insertion.insertHtml('<span><i class="' + faClass + '"></i></span>');
+            let classes = faClass.split(' ');
+            let span = $R.dom('<span>');
+            let icon = document.createElement('i');
+            classes.forEach((ele) => {
+                icon.classList.add(ele);
+            })
+            span.add(icon);
+            this.insertion.insertNode(span, 'after');;
         }
     });
 })(Redactor);
