@@ -25,7 +25,7 @@ class Settings extends Model
     /**
      * @var string
      */
-    public $faVersion = '6.0.0';
+    public $faVersion = '6.1.1';
 
     /**
      * @var string

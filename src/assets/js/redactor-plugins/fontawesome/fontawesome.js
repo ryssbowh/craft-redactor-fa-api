@@ -90,7 +90,8 @@ class FaGraphQl {
                 title: Craft.t('redactor-fa-api', 'Font Awesome Icon'),
                 search: Craft.t('redactor-fa-api', 'Enter an icon name'),
                 cancel: Craft.t('redactor-fa-api', 'Cancel'),
-                placeholder: Craft.t('redactor-fa-api', 'Icon name or id'),
+                placeholderName: Craft.t('redactor-fa-api', 'Icon name or id'),
+                placeholderClass: Craft.t('redactor-fa-api', 'Extra css class'),
                 search: Craft.t('redactor-fa-api', 'Search'),
                 loading: Craft.t('redactor-fa-api', 'Loading...'),
                 apiError: Craft.t('redactor-fa-api', 'Couldn\'t fetch icons from the api')
@@ -99,7 +100,8 @@ class FaGraphQl {
         modals: {
             fontawesome: '<div class="redactor-fa-modal">\
             <form action="">\
-                <input name="icon-name" placeholder="## placeholder ##" autocomplete="off">\
+                <input name="icon-name" placeholder="## placeholderName ##" autocomplete="off">\
+                <input name="icon-class" placeholder="## placeholderClass ##">\
             </form>\
             <div class="result-list-wrapper">\
                 <div class="loading">## loading ##</div>\
@@ -215,10 +217,11 @@ class FaGraphQl {
             });
         },
         _faClass(style, icon) {
+            let extra = this.form.getField('icon-class').val();
             if (this.majorVersion == 5) {
-                return this.styleToPrefixV5[style] + ' fa-' + icon.id;
+                return this.styleToPrefixV5[style] + ' fa-' + icon.id + (extra ? ' ' + extra : '');
             }
-            return 'fa-' + style + ' fa-' + icon.id;
+            return 'fa-' + style + ' fa-' + icon.id + (extra ? ' ' + extra : '');
         },
         _initSearch()
         {

@@ -2,6 +2,10 @@
     position: relative;
     form {
         display: flex;
+        flex-direction: column;
+    }
+    input[name=icon-class] {
+        margin-top: 10px;
     }
     .result-list-wrapper {
         display: none;

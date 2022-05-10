@@ -1,5 +1,11 @@
 # Redactor FontAwesome Changelog
 
+## 1.0.5 - 2022-05-10
+
+### Added
+- Extra css class to allow animations
+- Default settings version to 6.1.1
+
 ## 1.0.4 - 2022-04-14
 
 ### Fixed
