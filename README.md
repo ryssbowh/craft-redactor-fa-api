@@ -8,6 +8,8 @@ It supports local versions of Font Awesome, or online ones through [Kits](https:
 
 Free and Pro license supported.
 
+[Animations](https://fontawesome.com/docs/web/style/animate) are supported in the sense that you can add extra css classes to the icons before inserting them.
+
 ## Installation
 
 - `composer install ryssbowh/craft-redactor-fa-api`
