@@ -1,4 +1,4 @@
-# Font Awesome for Redactor for Craft CMS ^3.5
+# Font Awesome for Redactor for Craft CMS
 
 Integrate [font Awesome](https://fontawesome.com/) to your redactor.
 
