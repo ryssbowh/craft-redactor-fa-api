@@ -1,5 +1,10 @@
 # Redactor FontAwesome Changelog
 
+## 2.0.0 - 2022-05-10
+
+### Changed
+- Craft 4 support
+
 ## 1.0.5 - 2022-05-10
 
 ### Added
