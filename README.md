@@ -12,7 +12,7 @@ Free and Pro license supported.
 
 ## Installation
 
-- `composer install ryssbowh/craft-redactor-fa-api`
+- `composer require ryssbowh/craft-redactor-fa-api`
 - Add `fontawesome` to your redactor config file(s) (key `plugins`).
 
 ## Settings
