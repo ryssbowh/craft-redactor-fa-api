@@ -30,8 +30,8 @@
         "name": "Font Awesome for Redactor",
         "handle": "redactor-fa-api",
         "developer": "The Web Puzzlers",
-        "developerUrl": "https://github.com/ryssbowh",
-        "documentationUrl": "https://github.com/ryssbowh/craft-redactor-fa-api",
+        "developerUrl": "https://puzzlers.run",
+        "documentationUrl": "https://puzzlers.run/plugins/font-awesome-for-redactor",
         "class": "Ryssbowh\\RedactorFa\\RedactorFa"
     }
 }
