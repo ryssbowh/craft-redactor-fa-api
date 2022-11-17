@@ -29,7 +29,9 @@
     "extra": {
         "name": "Font Awesome for Redactor",
         "handle": "redactor-fa-api",
-        "documentationUrl": "https://github.com/ryssbowh/craft-redactor-fa-api",
+        "developer": "The Web Puzzlers",
+        "developerUrl": "https://puzzlers.run",
+        "documentationUrl": "https://puzzlers.run/plugins/font-awesome-for-redactor",
         "class": "Ryssbowh\\RedactorFa\\RedactorFa"
     }
 }
